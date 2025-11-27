@@ -1,12 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Code2, ArrowRight, NotebookPen } from "@lucide/astro";
 ---
 
 <BaseLayout title="Alex Hunter | Personal Dev Hub">
-  <section>
-    <h1>Hi, I’m Alex.</h1>
-    <p>
-      This is my personal dev hub – a place to experiment with Astro, TypeScript and Go while I get my coding muscles back.
-    </p>
+  <section class="page-shell grid gap-10 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] items-start">
+    <div class="space-y-6 md:col-span-2">
+      <div class="space-y-3">
+        <h1 class="text-center uppercase font-extrabold">Building, learning and experimenting.</h1>
+      </div>
+    </div>
   </section>
 </BaseLayout>

@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+
+  --color-brand: #0d6efd;              /* Primary blue */
+  --color-brand-light: #62a0ff;
+  --color-brand-dark: #084298;
+
+  --color-bg: #f7f8fa;                 /* Page background (very soft grey) */
+  --color-surface: #ffffff;            /* Cards / containers */
+  --color-border: #e3e6eb;             /* Subtle borders */
+  --color-text: #1a1a1a;               /* Standard dark text */
+  --color-text-light: #52575d;         /* Body text */
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+
+  --shadow-card: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-subtle: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-[var(--color-bg)] text-[var(--color-text)] antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+
+  h1 { @apply text-5xl md:text-6xl font-black; }
+  h2 { @apply text-2xl md:text-3xl font-semibold; }
+  h3 { @apply text-xl md:text-2xl font-semibold; }
+
+  p {
+    @apply text-base leading-relaxed text-[var(--color-text-light)];
+  }
+
+  a {
+    @apply text-brand hover:text-brand-dark transition-colors;
+  }
+}
+
+@layer components {
+  /* Layout wrapper */
+  .page-shell {
+    @apply mx-auto max-w-7xl px-4 py-5;
+  }
+
+  /* Card pattern */
+  .card {
+    @apply bg-[var(--color-surface)] rounded-[var(--radius-2xl)] p-6 border border-[var(--color-border)] shadow-[var(--shadow-card)];
+  }
+
+  /* Pill-style label */
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-3 py-1 text-xs font-medium text-[var(--color-text-light)] uppercase tracking-[0.15em];
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-white shadow-[var(--shadow-subtle)]
+           hover:bg-brand-dark transition;
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-[var(--color-border)]
+           bg-white px-5 py-2.5 text-sm font-medium text-[var(--color-text)] hover:border-brand hover:text-brand transition;
+  }
+}

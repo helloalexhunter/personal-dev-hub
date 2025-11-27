@@ -1,0 +1,19 @@
+---
+// src/components/Footer.astro
+---
+
+<footer class="border-t border-slate-200/80 bg-white">
+  <div class="mx-auto flex max-w-5xl flex-col gap-4 px-4 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+    <p>
+      © {new Date().getFullYear()} Alex Hunter. All rights reserved.
+    </p>
+
+    <div class="flex flex-wrap gap-4">
+      <a href="/about" class="hover:text-slate-700 transition-colors">About</a>
+      <a href="/projects" class="hover:text-slate-700 transition-colors">Projects</a>
+      <a href="/notes" class="hover:text-slate-700 transition-colors">Notes</a>
+      <a href="/privacy" class="hover:text-slate-700 transition-colors">Privacy</a>
+      <a href="/terms" class="hover:text-slate-700 transition-colors">Terms</a>
+    </div>
+  </div>
+</footer>
